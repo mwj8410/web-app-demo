@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: web-app-demo
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+    ports:
+      - 5432:5432
+    volumes:
+      - web-app-demo-db:/var/lib/postgresql
+
+volumes:
+  web-app-demo-db:

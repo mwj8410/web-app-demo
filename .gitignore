@@ -2,7 +2,7 @@
 #  Application Specifics  #
 # ##### ##### ##### ##### #
 *.env
-config/local.config.js
+config/development.*
 
 
 # ##### ##### ##### ##### #
