@@ -5,7 +5,8 @@ A demonstration application to showcase a simple full-stack web application in a
 
 ### API Runtime
 
-- express: 
+- express: widely used api framework
+  - body-parser: parses body content of HTTP request into usable blocks
 - sequelize: generic SQL ORM lib. Allows a more fluid way of interacting with a SQL database.
   - pg
   - pg-hstore
@@ -20,5 +21,5 @@ A demonstration application to showcase a simple full-stack web application in a
 
 ### Other Technology
 
-- Docker: makes managing environments and deployments easier, safer, and more consistent.
+- Docker: makes managing environments and deployments easier, safer, and more consistent. I'm using it here because I don't want ta locally 'installed' postgres instance and looking forward at CI and prod requirements.
 - Docker-Compose: Docker is 90% of what you need. After than some way of managing configuration in a consistent way is needed.

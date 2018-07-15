@@ -2,7 +2,7 @@
 
 const {expect} = require('chai')
 
-const movieController = require('../../../controllers/movie.controller')
+const movieController = require('../../controllers/movie.controller')
 
 describe('Controller: Movie', () => {
 
@@ -11,14 +11,22 @@ describe('Controller: Movie', () => {
   })
 
   describe('getMovie()', () => {
+
     it('exists', () => {
       expect(typeof movieController.getMovie).equals('function')
     })
+
   })
 
   describe('createMovie()', () => {
     it('exists', () => {
       expect(typeof movieController.createMovie).equals('function')
+    })
+  })
+
+  describe('listByUser()', () => {
+    it('exists', () => {
+      expect(typeof movieController.listByUser).equals('function')
     })
   })
 

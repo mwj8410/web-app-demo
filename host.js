@@ -16,6 +16,7 @@ const { name, version } = require('./package.json')
 const app = express()
 const log = new Phlog('Host')
 const port = process.env.HOST_PORT
+const staticContentPath = `${__dirname}${path.sep}ui${path.sep}hosted`; // Allows for MS and *nix hosting environemnts
 let server
 
 module.exports = {
@@ -76,6 +77,8 @@ function stop() {
 
 // Private
 function _mountRoutes () {
+  app.use('/ui', express.static(staticContentPath));
+
   fileAccumulator([ process.cwd(), 'routes/'].join(path.sep))
     .filter((filePath) => /\.js$/.test(filePath))
     .forEach((handlerPath) => {
