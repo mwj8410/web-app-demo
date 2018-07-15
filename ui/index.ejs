@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="lib/bootstrap.min.css" media="screen" title="Bootstrap" />
 <script>
-window.config = {}
+window.config = <%= JSON.stringify(htmlWebpackPlugin.options.options.config) %>
 </script>
 
 </head>
@@ -18,5 +18,5 @@ window.config = {}
   <!-- Application Requirements -->
   <script src="lib/jquery.min.js"></script> <!-- Must be before bootstrap -->
   <script src="lib/bootstrap.min.js"></script>
-<script type="text/javascript" src="main.js"></script></body>
+</body>
 </html>
