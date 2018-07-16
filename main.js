@@ -3,10 +3,15 @@
 // Evaluate Environment
 require('./config/environment')
 
-const sql = require('./connections/sql')
-sql.authenticate()
+async function startup() {
+  const sql = require('./connections/sql')
+  await sql.authenticate()
 
-const host = require('./host.js')
+  const host = require('./host.js')
 
-host.initialize()
-host.startup()
+  host.initialize()
+  host.startup()
+}
+
+startup()
+

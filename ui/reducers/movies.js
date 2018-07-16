@@ -1,16 +1,20 @@
 'use strict'
 
-const movies = (state = [], action) => {
+let initialState = {}
+
+const movies = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_MOVIE':
-      return [
-        ...state,
-        {
-          id: action.id,
-          text: action.text,
-          completed: false
-        }
-      ]
+      return {}
+
+    case 'GET_MOVIE_LIST':
+      console.log('Reducer: GET_MOVIE_LIST')
+      console.log(action)
+      return Object.assign({}, state, { list: action.payload })
+    case 'RESPONSE_UPDATE_MOVIE_LIST':
+      console.log('Reducer: RESPONSE_UPDATE_MOVIE_LIST')
+      return Object.assign({}, state, { list: action.payload })
+
     default:
       return state
   }

@@ -7,17 +7,19 @@ import {
   Link
 } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+
+import store from './store.jsx'
+
+// Components
+import UserSelector from './components/userSelector.jsx'
 
 // Views
 import Dashboard from './views/Dashboard.jsx'
 
-import rootReducer from './reducers'
-const store = createStore(rootReducer)
-
 const About = () => (
   <div>
-    <h2>About</h2>
+    <h1>About</h1>
+    <p>This page is included as a placeholder to demonstrate route level navigation in an SPA.</p>
   </div>
 )
 
@@ -26,7 +28,7 @@ Render(
 
     <Router basename='/'>
       <div>
-        <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+        <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
           <span className='navbar-brand mb-0 h1'>Web App Demo</span>
 
           <div className='collapse navbar-collapse' id='navbarNav'>
@@ -41,6 +43,8 @@ Render(
             </ul>
 
           </div>
+
+          <UserSelector />
 
         </nav>
 

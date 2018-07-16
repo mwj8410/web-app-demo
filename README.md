@@ -16,6 +16,8 @@ A demonstration application to showcase a simple full-stack web application in a
 
 Note: all of the ui requirements are listed as devDependancies. This is because the UI artifacts are generated into a small set of static assets at build time. Deployed instances should not run build processes, so these packages are isolated out of that environment.
 
+- axios: HTTP request lib
+
 - bable-core - Code transpiler that enables writing UI code in a more appropriate way with the concerns that UI has 
   - babel-loader
   - babel-preset-env

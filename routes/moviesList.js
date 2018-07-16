@@ -16,7 +16,10 @@ async function listMovies(req, res) {
   const { id_user } = req.params
   log.activity('listMovies', `request to list for user ${id_user}`)
 
-  const result = await listByUser(id_user)
-
-  return res.status(200).send(result)
+  try {
+    const result = await listByUser(id_user)
+    return res.status(200).send(result)
+  } catch (err) {
+    return res.status(500).send('API encountered an error. This is likely a 422.')
+  }
 }

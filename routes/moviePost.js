@@ -16,7 +16,10 @@ async function postMovie(req, res) {
   const { id_user } = req.params
   log.activity('moviePost', `request to Post movie for user ${id_user}`)
 
-  const result = await createMovie(id_user)
-
-  return res.status(200).send(result)
+  try {
+    const result = await createMovie(id_user, req.body)
+    return res.status(200).send(result)
+  } catch (err) {
+    return res.status(500).send('API encountered an error. This is likely a 422.')
+  }
 }

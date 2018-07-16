@@ -9,7 +9,8 @@ const log = new Phlog('Movie Controller')
 module.exports = {
   createMovie,
   getMovie,
-  listByUser
+  listByUser,
+  updateMovie
 }
 
 async function createMovie(id_user, movie) {
@@ -24,5 +25,12 @@ async function getMovie(id_user, id_movie) {
 
 async function listByUser(id_user) {
   log.activity('listByUser', `listing movies for ${id_user}`)
-  return Movie.find({ where: { id_user }})
+  return await Movie.findAll({ where: { id_user }})
+}
+
+async function updateMovie(id_user, id_movie, movie) {
+  log.activity('updateMovie', `user ${id_user} updating movie ${id_movie}`)
+  // ToDo: filter out read-only properties
+  const result = await Movie.update(movie, { where: { id: id_movie, id_user }})
+  return result
 }

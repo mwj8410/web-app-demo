@@ -35,9 +35,8 @@ module.exports = function (sequelize) {
     },
 
     actors: {
-      // Soft link to Actors
       allowNull: true,
-      type: Sequelize.ARRAY(Sequelize.STRING(64))
+      type: Sequelize.STRING
     },
 
     rating: {
